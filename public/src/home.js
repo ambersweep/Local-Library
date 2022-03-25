@@ -33,6 +33,7 @@ function getMostCommonGenres(books) {
       count: value,
     });
   }
+  
   genreArray.sort((genreA, genreB) => genreB.count - genreA.count);
   let results = genreArray.slice(0, 5);
   return results;
@@ -44,6 +45,7 @@ function getMostPopularBooks(books) {
     .slice(0, 5)
     .map((book) => ({ name: book.title, count: book.borrows.length }));
 }
+
 //helper function that gets authors id from books borrows list
 function getAuthorIds(books) {
   let authorIds = books.reduce((list, book) => {
@@ -63,6 +65,7 @@ function getAuthorIds(books) {
 
   return result;
 }
+
 //helper function that replaces the authors id with their first and last name
 function replaceIdWithName(temp, authors) {
   return temp.map((item) => {
@@ -71,6 +74,7 @@ function replaceIdWithName(temp, authors) {
     return item;
   });
 }
+
 function getMostPopularAuthors(books, authors) {
   const borrowsByAuthorId = getAuthorIds(books);
   const sortableArray = [];
@@ -85,10 +89,7 @@ function getMostPopularAuthors(books, authors) {
   result = replaceIdWithName(temp, authors);
   return result.slice(0, 5);
 }
-//returns array of five or fewer objects representing most popular authors whos books have been checked out the most
-//each object has 2 elements
-//name: key which represents authors name
-//count: key which represents number of times authors books have been borrowed
+
 module.exports = {
   getTotalBooksCount,
   getTotalAccountsCount,

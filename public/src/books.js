@@ -25,7 +25,6 @@ function partitionBooksByBorrowedStatus(books) {
 }
 
 function getBorrowersForBook(book, accounts) {
-  // should return an array of ten or fewer account objects that represents the accounts given by the IDs in the provided books borrows array. each accoutn object should include the returned entry from corresponding borrows array
   const { borrows } = book;
   let filteredAccounts = [];
 

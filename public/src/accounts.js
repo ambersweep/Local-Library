@@ -6,10 +6,10 @@ function sortAccountsByLastName(accounts) {
   return accounts.sort((accA, accB) =>
     accA.name.last.toLowerCase() > accB.name.last.toLowerCase() ? 1 : -1
   );
-}
+}  
 
+//returns number representing the number of times the accounts ID appears in any books borrows array
 function getTotalNumberOfBorrows(account, books) {
-  //returns number representing the number of times the accounts ID appears in any books borrows array
   let totalBorrows = 0;
   for (let i = 0; i < books.length; i++) {
     for (let j = 0; j < books[i].borrows.length; j++) {
