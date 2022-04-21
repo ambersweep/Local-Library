@@ -1,7 +1,7 @@
 // Templates
 function returnedBadgeTemplate(returned) {
   return `
-    <span class="badge badge-${returned ? "light" : "dark"}">
+    <span class="badge badge-${returned ? "success" : "danger"}">
       ${returned ? "Returned" : "Loaned Out"}
     </span>
   `;
@@ -9,7 +9,7 @@ function returnedBadgeTemplate(returned) {
 function bookLinkTemplate(book, returned = false) {
   return `
     <li class="list-group-item">
-      <a data-id="${book.id}" href="javascript:void(0);">${book.title}</a>
+      <a data-id="${book.id}" href="javascript:void(0);" title="Click to view more">${book.title}</a>
       ${returnedBadgeTemplate(returned)}
     </li>
   `;

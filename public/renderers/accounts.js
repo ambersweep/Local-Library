@@ -2,7 +2,7 @@
 function accountLinkTemplate(account) {
   return `
     <li class="list-group-item">
-      <a data-id="${account.id}" href="javascript:void(0);">
+      <a data-id="${account.id}" href="javascript:void(0);" title="Click to view more">
         ${account.name.last}, ${account.name.first}
       </a>
     </li>
